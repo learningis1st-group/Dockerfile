@@ -23,10 +23,11 @@ ENV SS_SERVER_PORT 8388
 ENV SS_PASSWORD password
 ENV SS_METHOD chacha20
 ENV SS_TIMEOUT 300
-ENV SS_OBFS
-ENV SS_PROTOCAL
+ENV SS_OBFS http_simple
+ENV SS_PROTOCAL auth_sha1_v2
 
 #Run
 WORKDIR /data/shadowsocks
-RUN ulimit -n 512000
-RUN python ./server.py -p $SS_SERVER_PORT -k $SS_PASSWORD -m $SS_METHOD -P $SS_PROTOCAL -o $SS_OBFS
+ADD start.sh /start.sh
+RUN chmod 755 /start.sh
+CMD ["sh", "-c", "/start.sh"]
