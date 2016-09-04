@@ -11,11 +11,12 @@ RUN yum -y groupinstall "Development Tools" && \
     tar xf libsodium-1.0.10.tar.gz && cd libsodium-1.0.10 && \
     ./configure && make -j2 && make install && \
     echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf && \
-    ldconfig
+    ldconfig && \
+    yum clean all
 
 #Get shadowsocksR
 RUN mkdir /data && \
-    cd /data
+    cd /data && \
     git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 
 #Setup ENV
