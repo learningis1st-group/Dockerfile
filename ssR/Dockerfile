@@ -28,7 +28,7 @@ ENV SS_OBFS http_simple
 ENV SS_PROTOCAL auth_sha1_v2
 
 #Run
-WORKDIR /data/shadowsocks/shadwosocks
+WORKDIR /data/shadowsocks/shadowsocks
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
 CMD ["sh", "-c", "/start.sh"]
