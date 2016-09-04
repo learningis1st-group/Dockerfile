@@ -26,9 +26,11 @@ ENV SS_METHOD chacha20
 ENV SS_TIMEOUT 300
 ENV SS_OBFS http_simple
 ENV SS_PROTOCAL auth_sha1_v2
+ENV SS_OBFS_PARAM cloudflare.com
 
 #Run
 WORKDIR /data/shadowsocks/shadwosocks
 ADD start.sh /start.sh
+ADD user-config.json /config.json
 RUN chmod 755 /start.sh
 CMD ["sh", "-c", "/start.sh"]

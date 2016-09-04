@@ -10,4 +10,4 @@ echo " Please remember the password!"
 echo "========================================================================"
 
 ulimit -n 512000
-python ./server.py -p $SS_SERVER_PORT -k $SS_PASSWORD -m $SS_METHOD -P $SS_PROTOCAL -o $SS_OBFS
+python ./server.py
