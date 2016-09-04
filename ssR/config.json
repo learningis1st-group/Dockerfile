@@ -1,8 +1,8 @@
 {
-  "server_port":$SS_SERVER_PORT,
-  "password":"$SS_PASSWORD",
-  "protocol":"$SS_PROTOCAL",
-  "obfs":"$SS_OBFS",
-  "method":"$SS_METHOD",
-  "obfs_param": "$SS_OBFS_PARAM",
+  "server_port":,
+  "password":"",
+  "protocol":"",
+  "obfs":"",
+  "method":"",
+  "obfs_param": "",
 }

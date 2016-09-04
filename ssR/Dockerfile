@@ -20,17 +20,11 @@ RUN mkdir /data && \
     git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 
 #Setup ENV
-ENV SS_SERVER_PORT 8388
-ENV SS_PASSWORD password
-ENV SS_METHOD chacha20
-ENV SS_TIMEOUT 300
-ENV SS_OBFS http_simple
-ENV SS_PROTOCAL auth_sha1_v2
-ENV SS_OBFS_PARAM cloudflare.com
+ENV CONFIG_FILE 
 
 #Run
 WORKDIR /data/shadowsocks/shadowsocks
-ADD start.sh /start.sh
-ADD config.json /user-config.json
-RUN chmod 755 /start.sh
-CMD ["sh", "-c", "/start.sh"]
+ADD start.sh ./start.sh
+RUN wget $CONFIG_FILE
+RUN chmod 755 ./start.sh
+CMD ["sh", "-c", "./start.sh"]
