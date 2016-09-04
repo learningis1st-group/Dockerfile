@@ -29,7 +29,7 @@ ENV SS_PROTOCAL auth_sha1_v2
 ENV SS_OBFS_PARAM cloudflare.com
 
 #Run
-WORKDIR /data/shadowsocks/shadwosocks
+WORKDIR /data/shadowsocks/shadowsocks
 ADD start.sh /start.sh
 ADD user-config.json /config.json
 RUN chmod 755 /start.sh
